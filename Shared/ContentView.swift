@@ -49,8 +49,24 @@ struct ContentView: View {
                 
             }
             .navigationTitle("Account") // title of this page
+            .toolbar {
+                ToolbarItemGroup(placement: .navigationBarTrailing) {
+                    Button {
+                        hideKeyboard()
+                    } label: {
+                        Image(systemName: "keyboard.chevron.compact.down")
+                    }
+                    
+                    Button("Save", action: saveUser)
+                }
+            }
         }
         
+    }
+    
+    // simple funtion printing on the console.
+    func saveUser() {
+        print("User saved")
     }
 }
 
